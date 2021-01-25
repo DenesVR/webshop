@@ -1,0 +1,86 @@
+<form class="frmStandard" id="mainform" name="mainform" method="POST" action="lib/save.php">
+
+    <input type="hidden" id="table" name="table" value="producten">
+    <input type="hidden" id="pkey" name="pkey" value="prod_id">
+    <input type="hidden" id="afterinsert" name="afterinsert" value="admin.php">
+    <input type="hidden" id="afterupdate" name="afterupdate" value="admin.php">
+
+
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@">
+    <!--end security-->
+
+<div class="form-group row">
+    <label for="prod_id" class="col-sm-4 col-form-label">Id</label>
+    <div class="col-sm-6">
+        <input type="text" readonly class="form-control-plaintext" id="prod_id" name="prod_id" value="@prod_id@">
+        @prod_id_error@
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="prod_naam" class="col-sm-4 col-form-label">Title</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control-plaintext" id="prod_naam" name="prod_naam" value="@prod_naam@">
+        @prod_naam_error@
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="prod_prijs" class="col-sm-4 col-form-label">Prijs</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control-plaintext" id="prod_prijs" name="prod_prijs" value="@prod_prijs@">
+        @prod_prijs_error@
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="prod_beschrijving" class="col-sm-4 col-form-label">Beschrijving</label>
+    <div class="col-sm-6">
+        <textarea type="text" class="form-control-plaintext" id="prod_beschrijving" name="prod_beschrijving" >@prod_beschrijving@</textarea>
+        @prod_beschrijving_error@
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="prod_aantal" class="col-sm-4 col-form-label">Aantal</label>
+    <div class="col-sm-6">
+        <input type="number" class="form-control-plaintext" id="prod_aantal" name="prod_aantal" value="@prod_aantal@">
+        @prod_aantal_error@
+    </div>
+</div>
+
+<!-- <div class="form-group row">
+    <label for="prod_cat_id" class="col-sm-4 col-form-label">Land</label>
+    <div class="col-sm-6">
+        @select_land@
+        @img_lan_id_error@
+    </div>
+</div> -->
+
+<!--
+<div class="form-group row">
+    <label for="prod_image" class="col-sm-4 col-form-label">IMG</label>
+    <div class="col-sm-6">
+        <input type="text" readonly class="form-control-plaintext" id="prod_image" name="prod_image" value="@prod_image@">
+        @prod_image_error@
+    </div>
+</div>
+-->
+
+<div class="form-group row">
+    <label class="col-sm-4 col-form-label"></label>
+    <div class="col-sm-6">
+        <input class="btn btn-success" name="btnOpslaan" type="submit" value="Opslaan">
+        <input class="btn btn-danger" name="btnAnnuleren" type="submit" value="Annuleren">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label class="col-sm-4 col-form-label"></label>
+    <div class="col-sm-6">
+        <img alt=@prod_naam@ class="img-fluid" style="width: 75%;" src=uploads/@prod_image@>
+    </div>
+</div>
+
+</form>

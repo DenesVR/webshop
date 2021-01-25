@@ -1,0 +1,34 @@
+<div class="col-sm-5 col-sm-offset-1 mb-sm-40">
+    <h4 class="font-alt">Login</h4>
+    <hr class="divider-w mb-10" />
+
+<form class="frmLogin" id="mainform" name="mainform" method="POST" action="lib/login_check.php">
+
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@">
+    <!--end security-->
+
+    <div class="form-group">
+
+            <input type="text" class="form-control" id="cus_email" name="cus_email" placeholder="Email">
+
+    </div>
+
+    <div class="form-group">
+
+            <input type="password" class="form-control" id="cus_wachtwoord" name="cus_wachtwoord" placeholder="Password">
+    </div>
+
+    <div class="form-group">
+            <input class="btn btn-round btn-b" type="submit" value="Login">
+    </div>
+
+    <div class="form-group row">
+        <label for="cus_wachtwoord" class="col-sm-4 col-form-label"></label>
+        <div class="col-sm-6">
+            <p>Nog geen login? <a href="register.php">Registreer hier</a></p>
+        </div>
+    </div>
+
+</form>
+</div>

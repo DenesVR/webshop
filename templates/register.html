@@ -1,0 +1,51 @@
+
+<div class="col-sm-5">
+    <h4 class="font-alt">Register</h4>
+    <hr class="divider-w mb-10" />
+<form class="frmRegister" id="mainform" name="mainform" method="POST" action="lib/save.php">
+
+    <!-- meta info -->
+    <input type="hidden" id="formname" name="formname" value="register">
+    <input type="hidden" id="table" name="table" value="customer">
+    <input type="hidden" id="pkey" name="pkey" value="cus_id">
+    <input type="hidden" id="afterinsert" name="afterinsert" value="login.php">
+    <input type="hidden" id="afterupdate" name="afterupdate" value="">
+    <!-- end meta info -->
+
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@">
+    <!--end security-->
+
+    <div class="form-group">
+
+            <input type="text" class="form-control" id="cus_voornaam" name="cus_voornaam" value="@cus_voornaam@" placeholder="First name">
+            @cus_voornaam_error@
+
+    </div>
+
+    <div class="form-group">
+
+            <input type="text" class="form-control" id="cus_achternaam" name="cus_achternaam" value="@cus_achternaam@" placeholder="Last name">
+            @cus_achternaam_error@
+
+    </div>
+    <div class="form-group">
+
+            <input type="text" class="form-control" id="cus_email" name="cus_email" value="@cus_email@" placeholder="Email">
+            @cus_email_error@
+
+    </div>
+    <div class="form-group">
+
+            <input type="password" class="form-control" id="cus_wachtwoord" name="cus_wachtwoord" value="@cus_wachtwoord@" placeholder="password">
+            @cus_wachtwoord_error@
+
+    </div>
+
+    <div class="form-group">
+            <input class="btn btn-block btn-round btn-b" type="submit" value="Save">
+    </div>
+
+</form>
+
+</div>

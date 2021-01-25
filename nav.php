@@ -34,9 +34,7 @@
                     </ul>
                 </li>
                 <li class="nav-item"><a class="nav-link" href="cart.php">Cart</a></li>
-                <!-- <li class="dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Shop</a>
 
-                  </li> -->
             </ul>
         </div>
     </div>

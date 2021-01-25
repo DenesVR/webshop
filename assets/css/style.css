@@ -560,10 +560,13 @@ blockquote {
 .shop-item-image {
   position: relative;
   overflow: hidden;
+  width: 262px;
+  height: 262px;
 }
 
 .shop-item-image img {
   width: 100%;
+
 }
 
 .shop-item-detail,

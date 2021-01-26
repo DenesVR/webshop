@@ -18,8 +18,12 @@ body {
 }
 
 img {
-  width: 100px;
+  max-width: 100%;
   height: auto;
+}
+
+.pic {
+  width: 100px;
 }
 
 .align-center {

@@ -6,6 +6,30 @@ require_once "lib/autoload.php";
 printHead();
 //printNavbar();
 include 'nav.php';
+
+if(!(isset($_SESSION['cart']))) {
+    $_SESSION['cart'];
+}
+
+if(isset($_GET['prod_id'])) {
+    $prod_id = $_GET['prod_id'];
+    $prod_aantal = $_GET['prod_aantal'];
+
+    if($prod_aantal > 0 && filter_var($prod_aantal, FILTER_VALIDATE_INT)) {
+        if(isset($_SESSION['cart'][$prod_id])) {
+            $_SESSION['cart'][$prod_id] += $prod_aantal;
+        } else {
+            $_SESSION['cart'][$prod_id] = $prod_aantal;
+        }
+    } else {
+
+    }
+}
+
+
+//echo "<pre>";
+//print_r($_SESSION['cart']);
+//echo "</pre>";
 ?>
 
     <div class="main">

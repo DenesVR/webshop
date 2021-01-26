@@ -20,12 +20,17 @@
                 </div>
             </div>
         </div>
+        <form action="product.php">
         <div class="row mb-20">
             <div class="col-sm-4 mb-sm-20">
-                <input class="form-control input-lg" type="number" name="" value="1" max=@prod_aantal@ min="1" required="required"/>
+                <input class="form-control input-lg" type="number" name="prod_aantal" value="1" max=@prod_aantal@ min="1" required="required"/>
+                <input type="hidden" name="prod_id" id="prod_id" value="@prod_id@">
             </div>
-            <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b" href="#">Add To Cart</a></div>
+            <div class="col-sm-8">
+                <input type="submit" class="btn btn-lg btn-block btn-round btn-b" value="Add To Cart" ></input>
+            </div>
         </div>
+        </form>
 
     </div>
 </div>

@@ -38,7 +38,7 @@ if(isset($_POST['submit'])&& isset($_FILES['my_image'])) {
 
                 //INSERT INTO DATABASE
                 $result = ExecuteSQL("INSERT INTO producten(prod_naam, prod_prijs, prod_beschrijving, prod_aantal, prod_cat_id, prod_image)values ('$prod_naam','$prod_prijs','$prod_beschrijving','$prod_aantal','$prod_cat_id','$new_img_name')");
-                //$result = ExecuteSQL("INSERT INTO img(img_url)values ('$new_img_name')");
+
                 header("location: ../admin.php");
 
 

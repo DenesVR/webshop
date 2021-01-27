@@ -1,23 +1,36 @@
 <?php
-error_reporting( E_ALL );
-ini_set( 'display_errors', 1 );
 
 require_once "lib/autoload.php";
 
 printHead();
-PrintNavBarAdmin();
-?>
-    <section class="module">
-        <div class="container">
-            <div class="row">
+include 'nav_admin.php';
+//PrintNavBarAdmin();
 
-                <?php
-                PrintAdd();
-
-
-                ?>
+if ($_SESSION['user']['cus_admin'] != 1) {
+    echo '<section class="module">
+    <div class="container">
+        <div class="row">
 
 
-            </div>
+
+    <div class="col-sm-6">
+            <p>U hebt geen toegang!</p>
         </div>
-    </section>
+    </div>
+    </div>
+</section>';
+}
+
+elseif ($_SESSION['user']['cus_admin'] = 1) {
+    echo '<section class="module">
+        <div class="container">
+            <div class="row">';
+
+
+    PrintAdd();
+
+
+    echo '</div>
+        </div>
+    </section>';
+}

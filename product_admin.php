@@ -5,7 +5,8 @@ ini_set('display_errors', 1);
 require_once "lib/autoload.php";
 
 printHead();
-PrintNavBarAdmin();
+include 'nav_admin.php';
+//PrintNavBarAdmin();
 ?>
 
 <section class="module">

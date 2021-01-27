@@ -26,10 +26,21 @@
                         <?php  if( !$_SESSION['user']) {
                            echo '<li><a href="login.php">Login</a></li>';
                          } if(isset($_SESSION['user'])) {
-                            echo '<li><a href="profile.php">Profile</a></li>';
-                            echo '<li><a href="orders.php">Orders</a></li>';
-                            echo '<li><a href="logout.php">Logout</a></li>';
-                         } ?>
+                                if( $_SESSION['user']['cus_admin'] > 0 ) {
+                                    echo '<li><a href="profile.php">Profile</a></li>';
+                                    echo '<li><a href="orders.php">Orders</a></li>';
+                                    echo '<li><a href="admin.php">Admin</a></li>';
+                                    echo '<li><a href="logout.php">Logout</a></li>';
+                                }
+                                else {
+                                    echo '<li><a href="profile.php">Profile</a></li>';
+                                    echo '<li><a href="orders.php">Orders</a></li>';
+                                    echo '<li><a href="logout.php">Logout</a></li>';
+                            }
+                         }
+
+
+                         ?>
 
                     </ul>
                 </li>

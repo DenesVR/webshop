@@ -1,14 +1,29 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once "lib/autoload.php";
 
 printHead();
-PrintNavBarAdmin();
-?>
+include 'nav_admin.php';
+//PrintNavBarAdmin();
 
-<section class="module">
+
+if ($_SESSION['user']['cus_admin'] != 1) {
+    echo '<section class="module">
+    <div class="container">
+        <div class="row">
+
+
+
+    <div class="col-sm-6">
+            <p>U hebt geen toegang!</p>
+        </div>
+    </div>
+    </div>
+</section>';
+}
+elseif ($_SESSION['user']['cus_admin'] = 1) {
+
+    echo '<section class="module">
     <div class="container">
         <div class="row">
 
@@ -22,25 +37,27 @@ PrintNavBarAdmin();
                     <th scope="col">Huisnr</th>
                     <th scope="col">Email</th>
                 </tr>
-                </thead
-                <tbody>
-                <?php
-                //get data
-                $data = GetData( "select * from customer" );
+                </thead>
+                <tbody>';
 
-                //get template
-                $template = file_get_contents("templates/customer_admin.html");
 
-                //merge
-                $output = MergeViewWithData( $template, $data );
-                print $output;
+    //get data
+    $data = GetData("select * from customer");
 
-                ?>
-                </tbody>
+    //get template
+    $template = file_get_contents("templates/customer_admin.html");
+
+    //merge
+    $output = MergeViewWithData($template, $data);
+    print $output;
+
+
+    echo '</tbody>
             </table>
 
 
 
         </div>
     </div>
-</section>
+</section>';
+}

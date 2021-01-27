@@ -5,11 +5,11 @@ ini_set( 'display_errors', 1 );
 //$public_access = true;
 require_once "autoload.php";
 
-$admin = LoginCheck();
+$_SESSION['admin'] = LoginCheck();
 
-if ( $admin )
+if ( $_SESSION['admin'] )
 {
-    $_SESSION['admin'] = $admin;
+    //$_SESSION['admin'] = $admin;
     $_SESSION['msgs'][] = "Welkom, " . $_SESSION['admin']['admin_naam'];
     header("Location: ../admin.php");
 }
@@ -17,6 +17,9 @@ else
 {
     unset( $_SESSION['admin'] );
     //GoToNoAccess();
+    //header("Location: ../admin.php");
+
+    echo 'Lukt niet';
 }
 
 function LoginCheck()
@@ -50,11 +53,11 @@ function LoginCheck()
         }
 
         //terugkeren naar afzender als er een fout is
-        //if ( key_exists("errors" , $_SESSION ) AND count($_SESSION['errors']) > 0 )
-        //{
-          //  $_SESSION['OLD_POST'] = $_POST;
-            //header( "Location: " . $sending_form_uri ); exit();
-        //}
+        if ( key_exists("errors" , $_SESSION ) AND count($_SESSION['errors']) > 0 )
+        {
+            $_SESSION['OLD_POST'] = $_POST;
+            header( "Location: " . $sending_form_uri ); exit();
+        }
 
         //search user in database
         $email = $_POST['admin_email'];
